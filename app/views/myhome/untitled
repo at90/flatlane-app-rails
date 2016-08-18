@@ -1,0 +1,9 @@
+function homeCard(){
+$(".homecards").each(function(index) {
+    $(this).delay(400*index).hide().fadeIn(500);});
+
+};
+$(document).on('ready page:load', function () {
+homeCard();});
+
+/*appear fadeIn cards */

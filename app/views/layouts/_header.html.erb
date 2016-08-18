@@ -1,0 +1,20 @@
+ <div class="ui fixed inverted menu">
+    <div class="ui container">
+       <a class="header logo-header" title="FlatLane | Houses, Villas, Apartments for Sale in Kerala, Dubai" href="/"><img class="logo-image" src="/assets/logo.png" style="padding:0.85em 0; max-height:100%!important;"></a>
+       <div class="ui ttl item" id="blank"> </div>
+      <span class="item ttl ">Homes in</span>
+      <div class="ui ttl simple dropdown item">
+       <%= curr_city%>
+        <!-- Needs to show current city--><i class="dropdown icon"></i>
+        <div class="menu">
+
+          <% City.all.each do |city| #wrap in controller sned array of cities wo the nearest city%>
+            <% if (city.c_name!=@city) %>
+               <a class="item" href="/myhome/<%= city.c_id%>"><span class="ttl"><%=city.c_name %></span></a>
+            <% end %>
+          <% end %>
+        
+        </div>
+      </div>
+    </div>
+  </div>

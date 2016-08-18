@@ -1,0 +1,29 @@
+<%= form_for(@prelaunch) do |f| %>
+  <% if @prelaunch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prelaunch.errors.count, "error") %> prohibited this prelaunch from being saved:</h2>
+
+      <ul>
+      <% @prelaunch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :b_name %><br>
+    <%= f.text_field :b_name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

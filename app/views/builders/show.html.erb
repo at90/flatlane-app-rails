@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<%=image_tag(@builder.avatar, size: "100x100", alt: @builder.b_name) %>
+<h1><%= @builder.avatar%></h1>
+
+<p>
+  <strong>B:</strong>
+  <%= @builder.b_id %>
+</p>
+
+<p>
+  <strong>B name:</strong>
+  <%= @builder.b_name %>
+</p>
+
+<p>
+  <strong>B projects completed:</strong>
+  <%= @builder.b_projects_completed %>
+</p>
+
+<p>
+  <strong>B weblink:</strong>
+  <%= @builder.b_weblink %>
+</p>
+
+<%= link_to 'Edit', edit_builder_path(@builder) %> |
+<%= link_to 'Back', builders_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  c_id: 1
+  c_name: MyString
+  c_description: MyString
+  c_landmark1: MyString
+  c_landmark2: MyString
+
+two:
+  c_id: 1
+  c_name: MyString
+  c_description: MyString
+  c_landmark1: MyString
+  c_landmark2: MyString

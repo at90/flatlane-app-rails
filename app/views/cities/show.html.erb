@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>C:</strong>
+  <%= @city.c_id %>
+</p>
+
+<p>
+  <strong>C name:</strong>
+  <%= @city.c_name %>
+</p>
+
+<p>
+  <strong>C description:</strong>
+  <%= @city.c_description %>
+</p>
+
+<p>
+  <strong>C landmark1:</strong>
+  <%= @city.c_landmark1 %>
+</p>
+
+<p>
+  <strong>C landmark2:</strong>
+  <%= @city.c_landmark2 %>
+</p>
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

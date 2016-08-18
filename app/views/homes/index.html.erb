@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Homes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>B</th>
+      <th>Cat</th>
+      <th>Price</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>C</th>
+      <th>State</th>
+      <th>Description</th>
+      <th>Area</th>
+      <th>Project date</th>
+      <th>Feat 1</th>
+      <th>Feat 2</th>
+      <th>Amen</th>
+      <th>L gmap</th>
+      <th>L prox1 name</th>
+      <th>L prox1</th>
+      <th>L prox2 name</th>
+      <th>L prox2</th>
+      <th>L prox3 name</th>
+      <th>L prox3</th>
+      <th>L prox4 name</th>
+      <th>L prox4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homes.each do |home| %>
+      <tr>
+        <td><%= home.name %></td>
+        <td><%= home.b_id %></td>
+        <td><%= home.cat %></td>
+        <td><%= home.price %></td>
+        <td><%= home.address1 %></td>
+        <td><%= home.address2 %></td>
+        <td><%= home.c_id %></td>
+        <td><%= home.state %></td>
+        <td><%= home.description %></td>
+        <td><%= home.area %></td>
+        <td><%= home.project_date %></td>
+        <td><%= home.feat_1 %></td>
+        <td><%= home.feat_2 %></td>
+        <td><%= home.amen %></td>
+        <td><%= home.l_gmap %></td>
+        <td><%= home.l_prox1_name %></td>
+        <td><%= home.l_prox1 %></td>
+        <td><%= home.l_prox2_name %></td>
+        <td><%= home.l_prox2 %></td>
+        <td><%= home.l_prox3_name %></td>
+        <td><%= home.l_prox3 %></td>
+        <td><%= home.l_prox4_name %></td>
+        <td><%= home.l_prox4 %></td>
+        <td><%= link_to 'Show', home %></td>
+        <td><%= link_to 'Edit', edit_home_path(home) %></td>
+        <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Home', new_home_path %>

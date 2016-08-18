@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  b_id: 1
+  b_name: MyString
+  b_projects_completed: 1
+  b_weblink: MyString
+
+two:
+  b_id: 1
+  b_name: MyString
+  b_projects_completed: 1
+  b_weblink: MyString

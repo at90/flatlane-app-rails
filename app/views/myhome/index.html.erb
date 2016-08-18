@@ -1,0 +1,139 @@
+
+
+<p id="notice"><%= notice %></p>
+    Homes in 
+    <%= City.find(params[:id]).c_name%>
+
+<div class="nailgrid">
+
+  <div class="ui four column grid stackable doubling cards">
+ 
+    <% @filter.each do |filter| %>
+     <div class="column homecards" >
+      <a href="<%=homes_path%>/<%=filter.id%>" onload="homeCard();" onclick="$('#yomodal').modal('show');">
+      <div class="ui teal fluid card">
+
+        <div class="ui slide masked reveal image" >
+        <%=image_tag(filter.image1_url(:thumb),class: "visible content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        <%=image_tag(filter.image2_url(:thumb), class: "hidden content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        </div>
+        <div class="content ui grid">
+
+
+                                    <div class="ten wide column" style="padding:0;"> 
+                          <h3><%= Builder.find(filter.b_id).b_name  %> <%= filter.name %></h3>
+                          <p><%= filter.address1 %></p>
+
+                                    </div>
+                                    <div class="six wide aligned right column" style="padding:0;">
+        <span class="header"><h2 align="right"><%= numeralify(filter.price); %></h2></span>
+                                    </div>
+
+        </div>
+      </div>
+      </a>
+     </div>
+    <% end %>
+
+   <% @filter.each do |filter| %>
+     <div class="column homecards" >
+      <a href="<%=homes_path%>/<%=filter.id%>" onload="homeCard();" onclick="$('#yomodal').modal('show');">
+      <div class="ui teal fluid card">
+
+        <div class="ui slide masked reveal image" >
+        <%=image_tag(filter.image1,class: "visible content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        <%=image_tag(filter.image1, class: "hidden content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        </div>
+        <div class="content ui grid">
+
+
+                                    <div class="ten wide column" style="padding:0;"> 
+                          <h3><%= Builder.find(filter.b_id).b_name  %> <%= filter.name %></h3>
+                          <p><%= filter.address1 %></p>
+
+                                    </div>
+                                    <div class="six wide aligned right column" style="padding:0;">
+        <span class="header"><h2 align="right"><%= numeralify(filter.price); %></h2></span>
+                                    </div>
+
+        </div>
+      </div>
+      </a>
+     </div>
+    <% end %><% @filter.each do |filter| %>
+     <div class="column homecards" >
+      <a href="<%=homes_path%>/<%=filter.id%>" onload="homeCard();" onclick="$('#yomodal').modal('show');">
+      <div class="ui teal fluid card">
+
+        <div class="ui slide masked reveal image" >
+        <%=image_tag(filter.image1,class: "visible content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        <%=image_tag(filter.image1, class: "hidden content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        </div>
+        <div class="content ui grid">
+
+
+                                    <div class="ten wide column" style="padding:0;"> 
+                          <h3><%= Builder.find(filter.b_id).b_name  %> <%= filter.name %></h3>
+                          <p><%= filter.address1 %></p>
+
+                                    </div>
+                                    <div class="six wide aligned right column" style="padding:0;">
+        <span class="header"><h2 align="right"><%= numeralify(filter.price); %></h2></span>
+                                    </div>
+
+        </div>
+      </div>
+      </a>
+     </div>
+    <% end %><% @filter.each do |filter| %>
+     <div class="column homecards" >
+      <a href="<%=homes_path%>/<%=filter.id%>" onload="homeCard();" onclick="$('#yomodal').modal('show');">
+      <div class="ui teal fluid card">
+
+        <div class="ui slide masked reveal image" >
+        <%=image_tag(filter.image1,class: "visible content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        <%=image_tag(filter.image1, class: "hidden content", size: "200x200", alt: Builder.find(filter.b_id).b_name) %>
+        </div>
+        <div class="content ui grid">
+
+
+                                    <div class="ten wide column" style="padding:0;"> 
+                          <h3><%= Builder.find(filter.b_id).b_name  %> <%= filter.name %></h3>
+                          <p><%= filter.address1 %></p>
+
+                                    </div>
+                                    <div class="six wide aligned right column" style="padding:0;">
+        <span class="header"><h2 align="right"><%= numeralify(filter.price); %></h2></span>
+                                    </div>
+
+        </div>
+      </div>
+      </a>
+     </div>
+    <% end %>
+
+
+
+
+
+  </div>
+</div>
+
+<div class="ui large steps" style="display:none;">
+
+<% City.all.each do |city| %>
+
+  <div class="step">
+    <div class="content">
+      <div class="title">  <a href='<%=city.id%>'><%=city.c_name %></a>
+</div>
+    </div>
+  </div>
+
+ <%    end %>
+
+</div>
+
+
+
+

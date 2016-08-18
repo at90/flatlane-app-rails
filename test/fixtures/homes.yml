@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  b_id: 1
+  cat: 1
+  price: 1
+  address1: MyString
+  address2: MyString
+  c_id: 1
+  state: 1
+  description: MyString
+  area: 1
+  project_date: 2016-01-25
+  feat_1: MyString
+  feat_2: MyString
+  amen: MyString
+  l_gmap: MyString
+  l_prox1_name: MyString
+  l_prox1: 1.5
+  l_prox2_name: MyString
+  l_prox2: 1.5
+  l_prox3_name: MyString
+  l_prox3: 1.5
+  l_prox4_name: MyString
+  l_prox4: 1.5
+
+two:
+  name: MyString
+  b_id: 1
+  cat: 1
+  price: 1
+  address1: MyString
+  address2: MyString
+  c_id: 1
+  state: 1
+  description: MyString
+  area: 1
+  project_date: 2016-01-25
+  feat_1: MyString
+  feat_2: MyString
+  amen: MyString
+  l_gmap: MyString
+  l_prox1_name: MyString
+  l_prox1: 1.5
+  l_prox2_name: MyString
+  l_prox2: 1.5
+  l_prox3_name: MyString
+  l_prox3: 1.5
+  l_prox4_name: MyString
+  l_prox4: 1.5

@@ -1,0 +1,33 @@
+<style type="text/css">
+a:hover { 
+    background-color:  transparent;
+}</style>
+
+<div style="z-index:400; position:fixed; top:0; height:100%; width:100%; background: rgba(19,247,236,1);
+background: -moz-linear-gradient(-45deg, rgba(19,247,236,1) 0%, rgba(19,247,236,1) 4%, rgba(0,181,173,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(19,247,236,1)), color-stop(4%, rgba(19,247,236,1)), color-stop(100%, rgba(0,181,173,1)));
+background: -webkit-linear-gradient(-45deg, rgba(19,247,236,1) 0%, rgba(19,247,236,1) 4%, rgba(0,181,173,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(19,247,236,1) 0%, rgba(19,247,236,1) 4%, rgba(0,181,173,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(19,247,236,1) 0%, rgba(19,247,236,1) 4%, rgba(0,181,173,1) 100%);
+background: linear-gradient(135deg, rgba(19,247,236,1) 0%, rgba(19,247,236,1) 4%, rgba(0,181,173,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13f7ec', endColorstr='#00b5ad', GradientType=1 );" >
+	<div style="margin: 10% 10%; color:white;">
+		<div class="ui sizer vertical segment" align="center">
+  			 <div class="ui"  ><img src="/assets/FlatLane.png" height="90px" style="padding:0.85em 0;"></div>
+ 	 		<div class="header"><h2 style="color:#FFF;">Super Simple Home Search</h2></div>
+				<div style="margin-top:6em;" class="ui form">
+					<h3>Add my project & get verified.</h3>
+						<%= form_for(@prelaunch) do |f| %>
+							<div class="inline field">
+								<%= f.text_field :phone, :placeholder=> "My Phone Number"%>
+								<%= f.submit "Join", :class=> "ui white inverted button"%>
+							</div>
+						<% end %>
+					<p><%= notice %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  
+</div>

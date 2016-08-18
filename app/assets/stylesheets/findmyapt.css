@@ -1,0 +1,65 @@
+/* Header layouts/_header*/
+
+.logo-header {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    overflow: hidden;
+}
+
+.ttl{
+  text-transform: uppercase !important; 
+  letter-spacing: 0.1em !important;
+}
+
+/*Footer layouts/_footer*/
+ .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+
+
+/* Cards */
+  #blank
+{
+  width: 30%;
+}
+.nailgrid
+{
+  padding: 4em;
+  min-height: 50em;
+}
+.project-grid
+{
+  padding: 1em;
+}
+
+.project-header
+{
+  margin: 1em;
+}
+.image-placeholder {
+    margin-right: auto;
+    margin-left:auto;
+    margin-top: 1em;
+    position: relative;
+    /* this is the only relevant part for the example */
+}
+/* both DIVs have the same image */
+ .bg-image-blur, .bg-image {
+    background-image: url('2.jpg');
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+}
+/* blur the background, to make blurred edges that overflow the unblurred image that is on top */
+ .bg-image-blur {
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}

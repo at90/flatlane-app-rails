@@ -1,0 +1,128 @@
+<%= form_for(@home) do |f| %>
+  <% if @home.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>
+
+      <ul>
+      <% @home.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :b_id %><br>
+    <%= f.number_field :b_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cat %><br>
+    <%= f.number_field :cat %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br>
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br>
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :c_id %><br>
+    <%= f.number_field :c_id %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.number_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.number_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :project_date %><br>
+    <%= f.date_select :project_date %>
+  </div>
+  <div class="field">
+    <%= f.label :feat_1 %><br>
+    <%= f.text_field :feat_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :feat_2 %><br>
+    <%= f.text_field :feat_2 %>
+  </div>
+ 
+ <div class="field">
+    <%= f.label :amen %><br>
+    <%= f.text_field :amen, placeholder: "1 2 3"%>
+  </div>
+ 
+
+  <div class="field">
+    <%= f.label :l_gmap %><br>
+    <%= f.text_field :l_gmap, placeholder: "4.243<comma> 5.245" %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox1_name %><br>
+    <%= f.text_field :l_prox1_name %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox1 %><br>
+    <%= f.text_field :l_prox1 %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox2_name %><br>
+    <%= f.text_field :l_prox2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox2 %><br>
+    <%= f.text_field :l_prox2 %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox3_name %><br>
+    <%= f.text_field :l_prox3_name %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox3 %><br>
+    <%= f.text_field :l_prox3 %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox4_name %><br>
+    <%= f.text_field :l_prox4_name %>
+  </div>
+  <div class="field">
+    <%= f.label :l_prox4 %><br>
+    <%= f.text_field :l_prox4 %>
+  </div>
+   <div class="field">
+    <%= f.label :image1 %><br>
+    <%= f.file_field :image1 %>
+  </div>
+  <div class="field">
+    <%= f.label :image2 %><br>
+    <%= f.file_field :image2 %>
+  </div>
+  <div class="field">
+    <%= f.label :image3 %><br>
+    <%= f.file_field :image3 %>
+  </div>
+  <div class="field">
+    <%= f.label :image4 %><br>
+    <%= f.file_field :image4 %>
+  </div>
+  <div class="buton inverted actions">
+    <%= f.submit %>
+  </div>
+<% end %>

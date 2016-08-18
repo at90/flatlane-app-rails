@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prelaunches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>B name</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prelaunches.each do |prelaunch| %>
+      <tr>
+        <td><%= prelaunch.b_name %></td>
+        <td><%= prelaunch.phone %></td>
+        <td><%= prelaunch.city %></td>
+        <td><%= link_to 'Show', prelaunch %></td>
+        <td><%= link_to 'Edit', edit_prelaunch_path(prelaunch) %></td>
+        <td><%= link_to 'Destroy', prelaunch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prelaunch', new_prelaunch_path %>

@@ -1,0 +1,287 @@
+<style media="screen">
+  #slider {
+    max-width: 900px;
+    margin: 10px auto;
+  }
+
+.myhome-thumb
+  {
+    padding:0 0.50em 0 0em;
+  }
+.unstyle-segment
+{
+  border-color: transparent !important;
+  box-shadow: 0 0 0 0 !important;
+
+}
+#goback 
+{
+  position: fixed;
+  z-index: 50;
+  left: 0%;
+  top: 16%;
+  height: 4em;
+  width: 4em;
+  color: white;
+  background-color: #00b5ad;
+  text-decoration:none;
+}
+	
+
+  </style>
+
+
+  
+<script type="text/javascript">
+$(window).scroll(function(){
+  if(($(window).scrollTop())<($(window).height()))
+  $(".myhome-form").css({"margin-top": ($(document).scrollTop()) + "px"});
+});
+</script>
+
+<div id="yomodal" class=" ui modal" style="background:transparent;">
+<i class="close icon white"></i>
+<div id="slider" class="image content">
+    <%=image_tag(@home.image1, size: "200x150", alt: @builder+" "+@home.name) %></a>
+<%=image_tag(@home.image2, size: "200x150", alt: @builder+" "+@home.name, data_src: @home.image2, src_retina: @home.image2 ) %>
+<%=image_tag(@home.image3, size: "200x150", alt: @builder+" "+@home.name,data_src: @home.image3, src_retina: @home.image3 ) %>
+<%=image_tag(@home.image4, size: "200x150", alt: @builder+" "+@home.name, data_src: @home.image4, src_retina: @home.image4 ) %>
+  </div></div>
+
+<div class="nailgrid">
+<div class="ui grid" style="margin-top:3em;" >
+  <div class="eleven wide column" >
+    <div class="ui segment" >
+
+
+  <script>
+  var slider = new IdealImageSlider.Slider('#slider');
+  slider.start();
+  </script>
+
+<div class="ui grid divided unstyle-segment" >
+          <div class="eight wide column"> <h1><img src="<%= @avatar %>" style="margin-right:1em;" width="50px" class="ui circular inline image"><%= @builder %> <%= @home.name %></h1></div>
+          <div class="four wide column">
+<i class="large <%= home_icon(@home.cat) %> teal inverted circular icon"></i>
+</div>
+          <div class="four wide column" style="background:#00b5ad;"> <h1 style="color:white;"><%= numeralify(@home.price); %></h1>
+</div>
+</div>
+<div class="sixteen center aligned wide column">
+    <div class="unstyle-segment ui segment">
+<span style="cursor:pointer;" onclick="$('#yomodal').modal('show');"  class="myhome-thumb"><%=image_tag(@home.image1_url(:thumb), size: "170x110", alt: @builder+" "+@home.name, ) %></span>  
+<span style="cursor:pointer;" onclick="$('#yomodal').modal('show');"  class="myhome-thumb"><%=image_tag(@home.image2_url(:thumb), size: "170x110", alt: @builder+" "+@home.name) %></span>
+<span style="cursor:pointer;" onclick="$('#yomodal').modal('show');"  class="myhome-thumb"><%=image_tag(@home.image3_url(:thumb), size: "170x110", alt: @builder+" "+@home.name) %></span>
+<span style="cursor:pointer;" onclick="$('#yomodal').modal('show');"  class="myhome-thumb"><%=image_tag(@home.image4_url(:thumb), size: "170x110", alt: @builder+" "+@home.name) %></span>
+    </div>
+</div>
+   
+<div class="sixteen center aligned wide column">
+    <div class="unstyle-segment ui segment">
+
+<div class="ui vertically divided grid">
+       <div class="row">
+          <div class="four wide column"><h4>Features</h4></div>
+          <div class="six wide column"><%= @home.feat_1 %></br><%= @home.feat_2 %>
+</div>
+          <div class="six wide column">  
+<%= @home.area %> sq.ft
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="four wide column"><h4>Description</h4></div>
+          <div class="ten wide column">  <%= @home.description %>
+
+
+            basdnsmnasdas asmndbamsndbamnsdamsndbasmndbamnsdmn samn amasmnbdasmn dbasmndba smndbasmn dbasmndba smndbamsnd bamdbasmn dbasmndbasmndadas</div>
+          
+        </div>
+        
+         <div class="row">
+          <div class="four wide column"><h4>Amenities</h4></div>
+          <div class="six wide column">
+            <% arr=@home.amen.split(/ /)  %>
+            <% arr.size %>
+            <% arr[0..3].each do |amen| %>
+            <p><i class="large <%= Amenity.find(amen).icon %> small teal icon"></i>
+            <%= Amenity.find(amen).name %> </p>          
+            <% end %>
+          </div>
+
+            <div class="six wide column">
+            <% arr[4..7].each do |amen| %>
+            <p><i class="large <%= Amenity.find(amen).icon %> small teal icon"></i>
+            <%= Amenity.find(amen).name %></p>           
+            <% end %>
+
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="four wide column"><h4>Proximity</h4></div>
+          <div class="six wide column">
+<p>
+<%= @home.l_prox1 %> kms from 
+<%= @home.l_prox1_name %>
+</p>
+<p>
+<%= @home.l_prox2 %> kms from 
+<%= @home.l_prox2_name %>
+</p></div>
+          <div class="six wide column">
+<p>
+<%= @home.l_prox3 %> kms from 
+<%= @home.l_prox3_name %>
+</p>
+<p>
+<%= @home.l_prox4 %> kms from 
+<%= @home.l_prox4_name %>
+</p>
+
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="four wide column"><h4>Location</h4></div>
+         <div class="six wide column"><%= @home.address1 %>, <%= @home.address2 %></br><%= @city %>
+</div>
+          <div class="sixteen wide column"> 
+
+
+        <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 52em;
+                height: 35em;
+            }
+        </style>
+        
+   
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUhlGsgQhKL6cQGYGBvEHiBNEsl5dkFZo"></script>
+        
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+               
+                var mapOptions = {
+                    
+                    zoom: 14,
+                      scrollwheel: false,
+
+                   
+                    center: new google.maps.LatLng(<%= @home.l_gmap %>),
+
+                    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+
+
+
+                };
+
+               
+                var mapElement = document.getElementById('map');
+
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+               
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(<%= @home.l_gmap %>),
+                    map: map,
+                    title: 'Location'
+                });
+            }
+        </script>
+        <div id="map"></div>
+
+
+
+
+
+
+
+
+
+</div>
+        </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+ </div>
+  </div>
+  <div class="myhome-form right floated left aligned five wide column">
+    <div class="ui segment">
+<div>      
+<p id="notice"><%= notice %></p>
+<h1>Book a visit to <%= @builder %>  <%= @home.name %></h1>
+<%= form_for(@lead,:html => {:id => "contact_me", :class=> "ui form"})  do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, :placeholder =>"Full Name"  %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, :placeholder =>"+91 9876 543 210" %>
+  </div>  
+  <div class="field">
+    <%= f.hidden_field :project_name, :value => @home.name %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :project_id, :value => @home.id %>
+  </div>
+
+  <div class="actions" align="right">
+<%= f.submit "Get More Info", :class=> "ui teal button"%>
+</div><!--ends form!-->
+
+  </div>
+<% end %>    </div>
+  </div>
+
+
+  <div class="sixteen wide column ">
+    <div class="ui segment unstyle-segment">
+      <h1>Simliar Homes</h1>
+      	 <div style="margin:1em 3em;">
+      	<% similar=similarHomes(@home.c_id,@home.id) %>
+      	
+      	  <% similar.each do |filter| %>
+<a href="<%=homes_path%>/<%=filter.id%>">
+      	  <div class="ui card link">
+  		  <div class="image">
+    	  <img src="<%=filter.image1%>">
+  		  </div>
+  		  <div class="content">
+          <div class="header"><%=builderName(filter.b_id)%> <%=filter.name%></div>
+          </div>
+          </div>
+         </a>
+    	  <% end %>
+     	 </div>
+
+    </div>
+  </div>
+ 
+</div>
+
+
+
+</div> <!-- nailgrid -->
+
+<div id="goback"><button  onclick="location.href='/myhome/<%=@home.c_id%>';" class="ui huge teal icon button">
+  <i class="left arrow icon"></i>
+</button></div>
+
+<script type="text/javascript">
+function jeebers() { 
+  success: alert('success!');}
+</script>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<h1>
+    Homes in 
+    <%= City.find(params[:id]).c_name%>
+
+
+    <% @filter.each do |filter| %>
+
+                  <h3><%= Builder.find(filter.builder_id).bname  %> | <%= filter.name %></h3>
+                  <h4><%= filter.price %></h4>
+                  <p><%= filter.address %></p>
+                  <p><%= filter.description %></p>
+  <a href='<%=projects_path%>/<%=filter.id%>'>Go</a>
+
+                  <% end %>
+</p>
+<p>
+  <strong>Here's the array of elements:</strong>
+  <%= @filter %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+<% City.all.each do |city| %>
+  <a href='<%=projects_path%>/city/<%=city.id%>'><%=city.c_name %></a>
+
+<%    end %>
